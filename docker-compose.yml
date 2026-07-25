@@ -1,0 +1,16 @@
+﻿services:
+  db:
+    image: postgres:13-alpine # Используем ту же версию, что и в задании
+    container_name: postgres_db
+    environment:
+      # Создаем пользователя, пароль и базу данных при первом запуске
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_pass
+      POSTGRES_DB: app_db
+    ports:
+      # Привязываем порт контейнера к порту хоста
+      - '5432:5432'
+    volumes:
+      # Сохраняем данные в папку на хосте, чтобы они не исчезали после удаления контейнера
+      - ./data:/var/lib/postgresql/data
+    restart: unless-stopped
