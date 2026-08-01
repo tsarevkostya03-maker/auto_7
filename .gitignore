@@ -1,0 +1,22 @@
+﻿# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+gradle/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Database data (ВАЖНО!)
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
